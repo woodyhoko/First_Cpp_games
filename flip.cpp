@@ -477,7 +477,7 @@ int mainpro_flip()
 		{
 			realprinting();
 			if(rright==1)
-			cout<<"Congrat!!";
+			cout<<"Congrat!! :)";
 			Sleep(1000);
 			guess();
 			tem=hard;
