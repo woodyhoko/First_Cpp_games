@@ -48,20 +48,20 @@ void draw()
 			cout<<board[b][a];
 		}
 		if(a==4)
-		cout<<"      黑棋有 "<<blackscore<<" 顆";
+		cout<<"      Black: "<<blackscore<<" points";
 		if(a==6)
-		cout<<"      白棋有 "<<whitescore<<" 顆";
+		cout<<"      White: "<<whitescore<<" points";
 		cout<<endl;
 	}
 		cout<<"\n  ";
 		if(first==1&&bla==1)
-		cout<<"                        黑棋先開始";
+		cout<<"                        Black first";
 		else if(first==1&&bla==0)
-		cout<<"                        白棋先開始";
+		cout<<"                        White first";
 		else if(bla==1)
-		cout<<"                        換黑棋下";
+		cout<<"                        Black's turn";
 		else
-		cout<<"                        換白棋下"; 
+		cout<<"                        White's turn"; 
 }
 
 void control()

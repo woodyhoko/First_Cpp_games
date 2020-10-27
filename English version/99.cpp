@@ -45,22 +45,22 @@ void askname()
 	do
 	{
 	if(players<2||players>4)
-	cout<<"請輸入2~4個玩家數目\n" ;
-	cout<<"玩家數目：";
+	cout<<"Please enter number of players\n" ;
+	cout<<"total players：";
 	cin>>players;
 	}while(players<2||players>4);
-	cout<<"你的名稱為：";
+	cout<<"Enter your name：";
 	cin>>name[0];
-	cout<<"玩家一名稱為：";
+	cout<<"Enter player 1's name：";
 	cin>>name[1];
 	if(players>2)
 	{
-		cout<<"玩家二名稱為：";
+		cout<<"Enter player 2's name：";
 		cin>>name[2]; 
 	}
 	if(players>3)
 	{
-		cout<<"玩家三名稱為：";
+		cout<<"Enter player 3's name：";
 		cin>>name[3]; 
 	}
 	order[0]=rand()%players;
@@ -82,7 +82,7 @@ void askname()
 			order[3]=rand()%players;
 		}while(order[3]==order[2]||order[3]==order[1]||order[3]==order[0]);
 	}
-	cout<<"出牌順序："<<name[order[0]]<<"→"<<name[order[1]];
+	cout<<"Order： "<<name[order[0]]<<"→"<<name[order[1]];
 	if(players>2)
 	cout<<"→"<<name[order[2]];
 	if(players>3)
@@ -92,7 +92,7 @@ void askname()
 
 void reset_99()
 {
-	cout<<"遊戲開始，請發牌！\n";
+	cout<<"Game start！\n";
 	turn=table=minuscase=rota=0;
 	for(int d=-1;d++<3;)
 	lose[4]=0;
@@ -152,20 +152,20 @@ void showcard()
 
 void showtable()
 {
-	cout<<"目前檯面數值為："<<table<<endl<<endl;
+	cout<<"The current points is："<<table<<endl<<endl;
 }
 
 void taketurn()
 {
 	int kind=0;
 	desi=-1;
-	cout<<"出牌者："<<name[order[turn]];
+	cout<<"player： "<<name[order[turn]];
 	if(order[turn]==0)
 	{
-		cout<<"\n輪到你出牌了(第幾張)：";
+		cout<<"\nIt's your turn(#turn)：";
 		cin>>desi;
 		desi--;
-		cout<<"你出的牌為：  ";
+		cout<<"You played：  ";
 		if(player[0][0][desi]==1)
 		cout<<"s:";
 		if(player[0][0][desi]==2)
@@ -178,22 +178,22 @@ void taketurn()
 		cout<<player[0][1][desi]<<endl;
 		if(player[0][1][desi]==10||player[0][1][desi]==12)
 		{
-			cout<<"正還是負？(正請輸入0,負請輸入1)：";
+			cout<<"Positive or Negative？(enter 0 for +, 1 for -)：";
 			cin>>minuscase;
 		}
 		else if(player[0][1][desi]==1)
 		{
-			cout<<"你要指定誰？(";
+			cout<<"Who do you want to target？(";
 			for(int na=0;na++<players-1;)
-			cout<<name[na]<<"請輸入"<<na<<"  ";
-			cout<<"如果要歸零，請輸入9)：";
+			cout<<name[na]<<"Please enter"<<na<<"  ";
+			cout<<"Enter 9 to reset to 0：";
 			cin>>minuscase;
 		}
 		else if(player[0][1][desi]==5)
 		{
-			cout<<"你要指定誰？(";
+			cout<<"Who do you want to target？(";
 			for(int na=0;na++<players-1;)
-			cout<<name[na]<<"請輸入"<<na<<"  ";
+			cout<<name[na]<<"Please enter"<<na<<"  ";
 			cout<<")：";
 			cin>>minuscase;
 		}
@@ -379,7 +379,7 @@ void getcard()
 		time--;
 	}
 	if(time<=0)
-	cout<<"你太晚了，錯過機會\n";
+	cout<<"Too late, you missed your chance\n";
 	if(time>0)
 	{
 		do
@@ -415,7 +415,7 @@ void check_99()
 	int loses=0,cardf=0;
 	if (table>=100)
 	{
-		cout<<endl<<name[order[turn]]<<"輸了\n";
+		cout<<endl<<name[order[turn]]<<" Lose\n";
 		lose[order[turn]]=1;
 		table=0;
 	}
@@ -426,7 +426,7 @@ void check_99()
 	}
 	if(cardf==52)
 	{
-		cout<<"開啟另一副牌\n";
+		cout<<"Start another round\n";
 		for(int ch=-1;ch++<51;)
 		{
 			cardused[ch]=0;
@@ -440,7 +440,7 @@ void check_99()
 		for(int lo=-1;lo++<players-1;)
 		{
 			if(lose[lo]!=1)
-			cout<<name[lo]<<"贏了！";
+			cout<<name[lo]<<" Win！";
 		}
 	}
 	if(rota==0)
@@ -480,7 +480,7 @@ void mainpro_99()
 		check_99();
 		Sleep(300);
 	}
-	cout<<"如果要離開請輸入1，不然自動重來";
+	cout<<"Press 1 to leave，else auto restart";
 	cin>>exitse;
 	if(exitse=='1')
 	break;

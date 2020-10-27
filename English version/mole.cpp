@@ -171,7 +171,7 @@ void hole(int n)
 	}
 	else if(a[n]==1&&s[n]!="＄"&&s[n]!="＠")
 	{
-		s[n]="鼠";
+		s[n]="M";
 		if(mousetime[n]++>=timetime)
 		{
 			a[n]=0;
@@ -179,7 +179,7 @@ void hole(int n)
 			lives--;
 		}
 	}
-	else if(c[n]>0&&s[n]!="＄"&&s[n]!="鼠")
+	else if(c[n]>0&&s[n]!="＄"&&s[n]!="M")
 	{
 		s[n]="＠";
 		if(mousetime[n]++>=timetime)

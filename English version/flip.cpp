@@ -326,24 +326,24 @@ void pick()
 	times=0;
 	showtime=1;
 	srand(time(0));
-	cout<<"請選擇難度(難請輸入1,普通請輸入2,簡單請輸入3)：";
+	cout<<"Please select difficulty(Hard(1), Normal(2), Easy(3))：";
 	cin>>reading;
 	timet=reading*5;
 	hard=reading;
-	cout<<"你想要用哪八款花色？";
+	cout<<"Please select 8 patterns: ";
 	for(int k=0;k++<8;)
 	{
 		cin>>selected[k];
 		if(selected[k]>16||selected[k]<1)
 		{
-			cout<<"別亂選\n";
+			cout<<"Don't mess with me!\n";
 			k--;
 		}
 		for(int n=0;n++<k-1;)
 		{
 			if(selected[n]==selected[k])
 			{
-				cout<<"請別重複選擇款式\n";
+				cout<<"Don't select the same one more than once\n";
 				k--;
 			}
 		}
@@ -387,7 +387,7 @@ void realprinting()
 	cout<<"  ║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m++);cout<<"║\n";n=5;
 	cout<<"  ║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m++);cout<<"║\n";n=5;
 	cout<<"  ║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m);cout<<"║║";shape(randed[n++],m++);cout<<"║";n=9;m=1;if(showtime==1){
-	cout<<"記憶時間剩下："<<timet<<"秒鐘";}cout<<endl;
+	cout<<"Remaining Time："<<timet<<"second";}cout<<endl;
 	cout<<"  ╚════════╝╚════════╝╚════════╝╚════════╝\n\n";
 	cout<<"  9           10          11          12          \n";
 	cout<<"  ╔════════╗╔════════╗╔════════╗╔════════╗\n";
@@ -412,12 +412,12 @@ void guess()
 	aaa=bbb=0;
 	fail=0;
 	rright=0;
-	cout<<"請輸入你記得是一樣牌的編號：";
+	cout<<"Enter the pair of cards with the same pattern：";
 	cin>>aaa>>bbb;
 	times++;
 	while(aaa==bbb||aaa>16||aaa<1||bbb>16||bbb<1||randed[aaa]!=17||randed[bbb]!=17)
 	{
-		cout<<"請別亂輸入編號，重新輸入：";
+		cout<<"Don't enter NONSENSE!：";
 		cin>>aaa>>bbb;
 		times++;
 	}
@@ -477,7 +477,7 @@ int mainpro_flip()
 		{
 			realprinting();
 			if(rright==1)
-			cout<<"恭喜！";
+			cout<<"Congrat！";
 			Sleep(1000);
 			guess();
 			tem=hard;
@@ -486,7 +486,7 @@ int mainpro_flip()
 				while(tem-->0)
 				{
 					realprinting();
-					cout<<"失敗囉請重新選擇";
+					cout<<"You failed, please retry";
 					Sleep(1000);
 				}
 				randed[aaa]=randed[bbb]=17;
@@ -502,9 +502,9 @@ cout<<"|   | __ |       ||       ||   |___ |  | |  ||       ||   |___ |   |_||_ 
 cout<<"|   ||  ||       ||       ||    ___||  |_|  ||       ||    ___||    __  |\n";
 cout<<"|   |_| ||   _   || ||_|| ||   |___ |       | |     | |   |___ |   |  | |\n";
 cout<<"|_______||__| |__||_|   |_||_______||_______|  |___|  |_______||___|  |_|\n\n\n";
-cout<<"                        你共用了"<<time2-time1<<"秒完成\n\n"; 
-cout<<"                          你共翻了"<<times<<"次\n\n";
-cout<<"                  重新開始遊戲請任意輸入一個字元\n                           離開請輸入0\n";
+cout<<"                        You used"<<time2-time1<<"second\n\n"; 
+cout<<"                          flipped"<<times<<"times\n\n";
+cout<<"                  Press any key to continue\n                           press 0 to exit\n";
 cin>>tempe;
 		if(tempe=='0')
 		break;
