@@ -16,7 +16,6 @@
 using namespace std;
 
 char chose;
-
 void mainmenu1()
 {
 	cout<<endl;
