@@ -92,21 +92,21 @@ do
 	for(int a=0;a++<height-8;)
 	{
 		if(a==3&&manupoint==1)
-		cout<<'|'<<setw(27)<<">>¹CÀ¸¶}©l<<"<<setw (15)<<'|'<<endl;
+		cout<<'|'<<setw(27)<<">>éŠæˆ²é–‹å§‹<<"<<setw (15)<<'|'<<endl;
 		else if(a==3)
-		cout<<'|'<<setw(25)<<"¹CÀ¸¶}©l"<<setw (17)<<'|'<<endl;
+		cout<<'|'<<setw(25)<<"éŠæˆ²é–‹å§‹"<<setw (17)<<'|'<<endl;
 		else if(a==5&&manupoint==2)
-		cout<<'|'<<setw(27)<<">> ±Æ¦æº] <<"<<setw (15)<<'|'<<endl;
+		cout<<'|'<<setw(27)<<">> æŽ’è¡Œæ¦œ <<"<<setw (15)<<'|'<<endl;
 		else if(a==5)
-		cout<<'|'<<setw(24)<<"±Æ¦æº]"<<setw (18)<<'|'<<endl;
+		cout<<'|'<<setw(24)<<"æŽ’è¡Œæ¦œ"<<setw (18)<<'|'<<endl;
 		else if(a==7&&manupoint==3)
-		cout<<'|'<<setw(27)<<">>Ãø«×¿ï¾Ü<<"<<setw (15)<<'|'<<endl;
+		cout<<'|'<<setw(27)<<">>é›£åº¦é¸æ“‡<<"<<setw (15)<<'|'<<endl;
 		else if(a==7)
-		cout<<'|'<<setw(25)<<"Ãø«×¿ï¾Ü"<<setw (17)<<'|'<<endl;
+		cout<<'|'<<setw(25)<<"é›£åº¦é¸æ“‡"<<setw (17)<<'|'<<endl;
 		else if(a==9&&manupoint==4)
-		cout<<'|'<<setw(27)<<">>Â÷¶}¹CÀ¸<<"<<setw (15)<<'|'<<endl;
+		cout<<'|'<<setw(27)<<">>é›¢é–‹éŠæˆ²<<"<<setw (15)<<'|'<<endl;
 		else if(a==9)
-		cout<<'|'<<setw(25)<<"Â÷¶}¹CÀ¸"<<setw (17)<<'|'<<endl;
+		cout<<'|'<<setw(25)<<"é›¢é–‹éŠæˆ²"<<setw (17)<<'|'<<endl;
 		if(a==11)
 		cout<<'|'<<setw(41)<<"w:up  s:down  a:left  d:right"<<'|'<<endl; 
 		if(a==12)

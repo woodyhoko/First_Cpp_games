@@ -28,12 +28,12 @@ cout<<"  /**    *****  ********** /**  //*   /** /**////   ////////**\n";
 cout<<"  //**  ////** /**//////** /**   /    /** /**              /**\n";
 cout<<"   //********  /**     /** /**        /** /********  ******** \n";
 cout<<"    ////////   //      //  //         //  ////////  ////////  \n\n\n";
-	cout<<"             Snake(Press 1)\n\n";
-	cout<<"             Whac-The-Mole(Press 2)\n\n";
-	cout<<"             Othello(Press 3)\n\n";
-	cout<<"             Card game 99(Press 4)\n\n";
-	cout<<"             Memory game(Press 5)\n\n";
-	cout<<"             exit(Press 0)\n\n             ";
+	cout<<"             要玩貪吃蛇請按1  (主題！！！)\n\n";
+	cout<<"             要玩打地鼠請按2  (附屬小遊戲)\n\n";
+	cout<<"             要玩黑白棋請按3  (挑戰看看AI)\n\n";
+	cout<<"             要玩99請按4  (試試看不需更新畫面的遊戲)\n\n";
+	cout<<"             要玩翻牌請按5  (都寫4個了，完成最後一個吧)\n\n";
+	cout<<"             要離開請輸入0\n\n             ";
 	do
 	{
 		if(_kbhit())
@@ -66,7 +66,6 @@ cout<<"    ////////   //      //  //         //  ////////  ////////  \n\n\n";
 
 int main()
 {
-	printf("Ѯ");
 	while(1)
 	{
 	mainmenu1();

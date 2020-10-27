@@ -26,11 +26,11 @@ void reset()
 	{
 		for(int b=0;b++<8;)
 		{
-			board[b][a]="¡¼";
+			board[b][a]="â–¡";
 		}
 	}
-	board[4][4]=board[5][5]="¡´";
-	board[4][5]=board[5][4]="¡³";
+	board[4][4]=board[5][5]="â—";
+	board[4][5]=board[5][4]="â—‹";
 }
 
 void draw()
@@ -43,25 +43,25 @@ void draw()
 		for(int b=0;b++<8;)
 		{
 			if(b==pointer[0]&&a==pointer[1])
-			cout<<"¢®";
+			cout<<"â•³";
 			else
 			cout<<board[b][a];
 		}
 		if(a==4)
-		cout<<"      ¶Â´Ñ¦³ "<<blackscore<<" Áû";
+		cout<<"      é»‘æ£‹æœ‰ "<<blackscore<<" é¡†";
 		if(a==6)
-		cout<<"      ¥Õ´Ñ¦³ "<<whitescore<<" Áû";
+		cout<<"      ç™½æ£‹æœ‰ "<<whitescore<<" é¡†";
 		cout<<endl;
 	}
 		cout<<"\n  ";
 		if(first==1&&bla==1)
-		cout<<"                        ¶Â´Ñ¥ı¶}©l";
+		cout<<"                        é»‘æ£‹å…ˆé–‹å§‹";
 		else if(first==1&&bla==0)
-		cout<<"                        ¥Õ´Ñ¥ı¶}©l";
+		cout<<"                        ç™½æ£‹å…ˆé–‹å§‹";
 		else if(bla==1)
-		cout<<"                        ´«¶Â´Ñ¤U";
+		cout<<"                        æ›é»‘æ£‹ä¸‹";
 		else
-		cout<<"                        ´«¥Õ´Ñ¤U"; 
+		cout<<"                        æ›ç™½æ£‹ä¸‹"; 
 }
 
 void control()
@@ -88,15 +88,15 @@ void control()
 			case ' ':
 				if(first==1)
 				first=0;
-				if(bla==1&&board[pointer[0]][pointer[1]]=="¡¼")
+				if(bla==1&&board[pointer[0]][pointer[1]]=="â–¡")
 				{
-					board[pointer[0]][pointer[1]]="¡³";
+					board[pointer[0]][pointer[1]]="â—‹";
 					bla=0;
 					pla=1;
 				}
-				else if(board[pointer[0]][pointer[1]]=="¡¼")
+				else if(board[pointer[0]][pointer[1]]=="â–¡")
 				{
-					board[pointer[0]][pointer[1]]="¡´";
+					board[pointer[0]][pointer[1]]="â—";
 					bla=1;
 					pla=1;
 				}
@@ -135,18 +135,18 @@ void check()
 	while(1)
 	{
 		testx++;
-		if(board[testx][pointer[1]]=="¡´")
+		if(board[testx][pointer[1]]=="â—")
 		{
-			board[testx][pointer[1]]="¡³";
+			board[testx][pointer[1]]="â—‹";
 			countb++;
 		}
-		else if(board[testx][pointer[1]]=="¡³")
+		else if(board[testx][pointer[1]]=="â—‹")
 		break;
-		if(board[testx][pointer[1]]=="¡¼"||board[testx][pointer[1]]=="X")
+		if(board[testx][pointer[1]]=="â–¡"||board[testx][pointer[1]]=="X")
 		{
 			for(int k=xbb;k++<testx-1;)
 			{
-				board[k][pointer[1]]="¡´";
+				board[k][pointer[1]]="â—";
 				countb--;
 			}
 			break;
@@ -156,18 +156,18 @@ void check()
 	while(1)
 	{
 		testx--;
-		if(board[testx][pointer[1]]=="¡´")
+		if(board[testx][pointer[1]]=="â—")
 		{
-			board[testx][pointer[1]]="¡³";
+			board[testx][pointer[1]]="â—‹";
 			countb++;
 		}
-		else if(board[testx][pointer[1]]=="¡³")
+		else if(board[testx][pointer[1]]=="â—‹")
 		break;
-		if(board[testx][pointer[1]]=="¡¼"||board[testx][pointer[1]]=="X")
+		if(board[testx][pointer[1]]=="â–¡"||board[testx][pointer[1]]=="X")
 		{
 			for(int k=xbb;k-->testx+1;)
 			{
-				board[k][pointer[1]]="¡´";
+				board[k][pointer[1]]="â—";
 				countb--;
 			}
 			break;
@@ -177,18 +177,18 @@ void check()
 	while(1)
 	{
 		testy++;
-		if(board[pointer[0]][testy]=="¡´")
+		if(board[pointer[0]][testy]=="â—")
 		{
-			board[pointer[0]][testy]="¡³";
+			board[pointer[0]][testy]="â—‹";
 			countb++;
 		}
-		else if(board[pointer[0]][testy]=="¡³")
+		else if(board[pointer[0]][testy]=="â—‹")
 		break;
-		if(board[pointer[0]][testy]=="¡¼"||board[pointer[0]][testy]=="X")
+		if(board[pointer[0]][testy]=="â–¡"||board[pointer[0]][testy]=="X")
 		{
 			for(int k=ybb;k++<testy-1;)
 			{
-				board[pointer[0]][k]="¡´";
+				board[pointer[0]][k]="â—";
 				countb--;
 			}
 			break;
@@ -198,18 +198,18 @@ void check()
 	while(1)
 	{
 		testy--;
-		if(board[pointer[0]][testy]=="¡´")
+		if(board[pointer[0]][testy]=="â—")
 		{
-			board[pointer[0]][testy]="¡³";
+			board[pointer[0]][testy]="â—‹";
 			countb++;
 		}
-		else if(board[pointer[0]][testy]=="¡³")
+		else if(board[pointer[0]][testy]=="â—‹")
 		break;
-		if(board[pointer[0]][testy]=="¡¼"||board[pointer[0]][testy]=="X")
+		if(board[pointer[0]][testy]=="â–¡"||board[pointer[0]][testy]=="X")
 		{
 			for(int k=ybb;k-->testy+1;)
 			{
-				board[pointer[0]][k]="¡´";
+				board[pointer[0]][k]="â—";
 				countb--;
 			}
 			break;
@@ -221,18 +221,18 @@ void check()
 	{
 		testx++;
 		testy++;
-		if(board[testx][testy]=="¡´")
+		if(board[testx][testy]=="â—")
 		{
-			board[testx][testy]="¡³";
+			board[testx][testy]="â—‹";
 			countb++;
 		}
-		else if(board[testx][testy]=="¡³")
+		else if(board[testx][testy]=="â—‹")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb+1,m=xbb+1;k<=testy-1;k++,m++)
 			{
-					board[m][k]="¡´";
+					board[m][k]="â—";
 					countb--;
 			}
 			break;
@@ -244,18 +244,18 @@ void check()
 	{
 		testx++;
 		testy--;
-		if(board[testx][testy]=="¡´")
+		if(board[testx][testy]=="â—")
 		{
-			board[testx][testy]="¡³";
+			board[testx][testy]="â—‹";
 			countb++;
 		}
-		else if(board[testx][testy]=="¡³")
+		else if(board[testx][testy]=="â—‹")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb-1,m=xbb+1;k>=testy+1;k--,m++)
 			{
-					board[m][k]="¡´";
+					board[m][k]="â—";
 					countb--;
 			}
 			break;
@@ -267,18 +267,18 @@ void check()
 	{
 		testx--;
 		testy++;
-		if(board[testx][testy]=="¡´")
+		if(board[testx][testy]=="â—")
 		{
-			board[testx][testy]="¡³";
+			board[testx][testy]="â—‹";
 			countb++;
 		}
-		else if(board[testx][testy]=="¡³")
+		else if(board[testx][testy]=="â—‹")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb+1,m=xbb-1;k<=testy-1;k++,m--)
 			{
-					board[m][k]="¡´";
+					board[m][k]="â—";
 					countb--;
 			}
 			break;
@@ -290,18 +290,18 @@ void check()
 	{
 		testx--;
 		testy--;
-		if(board[testx][testy]=="¡´")
+		if(board[testx][testy]=="â—")
 		{
-			board[testx][testy]="¡³";
+			board[testx][testy]="â—‹";
 			countb++;
 		}
-		else if(board[testx][testy]=="¡³")
+		else if(board[testx][testy]=="â—‹")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb-1,m=xbb-1;k>=testy+1;k--,m--)
 			{
-					board[m][k]="¡´";
+					board[m][k]="â—";
 					countb--;
 			}
 			break;
@@ -310,7 +310,7 @@ void check()
 	if(countb==0)
 	{
 		bla=1;
-		board[xbb][ybb]="¡¼";
+		board[xbb][ybb]="â–¡";
 	}
 	}
 	else if(bla==1)
@@ -320,18 +320,18 @@ void check()
 	while(1)
 	{
 		testx++;
-		if(board[testx][pointer[1]]=="¡³")
+		if(board[testx][pointer[1]]=="â—‹")
 		{
-			board[testx][pointer[1]]="¡´";
+			board[testx][pointer[1]]="â—";
 			countw++;
 		}
-		else if(board[testx][pointer[1]]=="¡´")
+		else if(board[testx][pointer[1]]=="â—")
 		break;
-		if(board[testx][pointer[1]]=="¡¼"||board[testx][pointer[1]]=="X")
+		if(board[testx][pointer[1]]=="â–¡"||board[testx][pointer[1]]=="X")
 		{
 			for(int k=xbb;k++<testx-1;)
 			{
-				board[k][pointer[1]]="¡³";
+				board[k][pointer[1]]="â—‹";
 				countw--;
 			}
 			break;
@@ -341,18 +341,18 @@ void check()
 	while(1)
 	{
 		testx--;
-		if(board[testx][pointer[1]]=="¡³")
+		if(board[testx][pointer[1]]=="â—‹")
 		{
-			board[testx][pointer[1]]="¡´";
+			board[testx][pointer[1]]="â—";
 			countw++;
 		}
-		else if(board[testx][pointer[1]]=="¡´")
+		else if(board[testx][pointer[1]]=="â—")
 		break;
-		if(board[testx][pointer[1]]=="¡¼"||board[testx][pointer[1]]=="X")
+		if(board[testx][pointer[1]]=="â–¡"||board[testx][pointer[1]]=="X")
 		{
 			for(int k=xbb;k-->testx+1;)
 			{
-				board[k][pointer[1]]="¡³";
+				board[k][pointer[1]]="â—‹";
 				countw--;
 			}
 			break;
@@ -362,18 +362,18 @@ void check()
 	while(1)
 	{
 		testy++;
-		if(board[pointer[0]][testy]=="¡³")
+		if(board[pointer[0]][testy]=="â—‹")
 		{
-			board[pointer[0]][testy]="¡´";
+			board[pointer[0]][testy]="â—";
 			countw++;
 		}
-		else if(board[pointer[0]][testy]=="¡´")
+		else if(board[pointer[0]][testy]=="â—")
 		break;
-		if(board[pointer[0]][testy]=="¡¼"||board[pointer[0]][testy]=="X")
+		if(board[pointer[0]][testy]=="â–¡"||board[pointer[0]][testy]=="X")
 		{                
 			for(int k=ybb;k++<testy-1;)
 			{
-				board[pointer[0]][k]="¡³";
+				board[pointer[0]][k]="â—‹";
 				countw--;
 			}
 			break;
@@ -383,18 +383,18 @@ void check()
 	while(1)
 	{
 		testy--;
-		if(board[pointer[0]][testy]=="¡³")
+		if(board[pointer[0]][testy]=="â—‹")
 		{
-			board[pointer[0]][testy]="¡´";
+			board[pointer[0]][testy]="â—";
 			countw++;
 		}
-		else if(board[pointer[0]][testy]=="¡´")
+		else if(board[pointer[0]][testy]=="â—")
 		break;
-		if(board[pointer[0]][testy]=="¡¼"||board[pointer[0]][testy]=="X")
+		if(board[pointer[0]][testy]=="â–¡"||board[pointer[0]][testy]=="X")
 		{
 			for(int k=ybb;k-->testy+1;)
 			{
-				board[pointer[0]][k]="¡³";
+				board[pointer[0]][k]="â—‹";
 				countw--;
 			}
 			break;
@@ -406,18 +406,18 @@ void check()
 	{
 		testx++;
 		testy++;
-		if(board[testx][testy]=="¡³")
+		if(board[testx][testy]=="â—‹")
 		{
-			board[testx][testy]="¡´";
+			board[testx][testy]="â—";
 			countw++;
 		}
-		else if(board[testx][testy]=="¡´")
+		else if(board[testx][testy]=="â—")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb+1,m=xbb+1;k<=testy-1;k++,m++)
 			{
-					board[m][k]="¡³";
+					board[m][k]="â—‹";
 					countw--;
 			}
 			break;
@@ -429,18 +429,18 @@ void check()
 	{
 		testx++;
 		testy--;
-		if(board[testx][testy]=="¡³")
+		if(board[testx][testy]=="â—‹")
 		{
-			board[testx][testy]="¡´";
+			board[testx][testy]="â—";
 			countw++;
 		}
-		else if(board[testx][testy]=="¡´")
+		else if(board[testx][testy]=="â—")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb-1,m=xbb+1;k>=testy+1;k--,m++)
 			{
-					board[m][k]="¡³";
+					board[m][k]="â—‹";
 					countw--;
 			}
 			break;
@@ -452,18 +452,18 @@ void check()
 	{
 		testx--;
 		testy++;
-		if(board[testx][testy]=="¡³")
+		if(board[testx][testy]=="â—‹")
 		{
-			board[testx][testy]="¡´";
+			board[testx][testy]="â—";
 			countw++;
 		}
-		else if(board[testx][testy]=="¡´")
+		else if(board[testx][testy]=="â—")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb+1,m=xbb-1;k<=testy-1;k++,m--)
 			{
-					board[m][k]="¡³";
+					board[m][k]="â—‹";
 					countw--;
 			}
 			break;
@@ -475,18 +475,18 @@ void check()
 	{
 		testx--;
 		testy--;
-		if(board[testx][testy]=="¡³")
+		if(board[testx][testy]=="â—‹")
 		{
-			board[testx][testy]="¡´";
+			board[testx][testy]="â—";
 			countw++;
 		}
-		else if(board[testx][testy]=="¡´")
+		else if(board[testx][testy]=="â—")
 		break;
-		if(board[testx][testy]=="¡¼"||board[testx][testy]=="X")
+		if(board[testx][testy]=="â–¡"||board[testx][testy]=="X")
 		{
 			for(int k=ybb-1,m=xbb-1;k>=testy+1;k--,m--)
 			{
-					board[m][k]="¡³";
+					board[m][k]="â—‹";
 					countw--;
 			}
 			break;
@@ -495,7 +495,7 @@ void check()
 	if(countw==0)
 	{
 		bla=0;
-		board[xbb][ybb]="¡¼";
+		board[xbb][ybb]="â–¡";
 	}
 	}
 }
@@ -518,14 +518,14 @@ void turncheck()
 		{
 			pointer[0]=b;
 			pointer[1]=a;
-			if(board[b][a]=="¡¼")
+			if(board[b][a]=="â–¡")
 			{
 				if(bla==1)
-				board[b][a]="¡´";
+				board[b][a]="â—";
 				if(bla==0)
-				board[b][a]="¡³";
+				board[b][a]="â—‹";
 				check();
-				if(board[b][a]!="¡¼")
+				if(board[b][a]!="â–¡")
 				skip=0;
 				else
 				bla=1-bla;
@@ -556,9 +556,9 @@ void score()
 	{
 		for(int b=0;b++<8;)
 		{
-			if(board[b][a]=="¡´")
+			if(board[b][a]=="â—")
 			whitescore++;
-			if(board[b][a]=="¡³")
+			if(board[b][a]=="â—‹")
 			blackscore++;
 		}
 	}
@@ -646,11 +646,11 @@ void compu()
 			m++;
 			pointer[0]=m;
 			pointer[1]=k;
-			if(board[m][k]=="¡¼")
+			if(board[m][k]=="â–¡")
 			{
-				board[m][k]="¡´";
+				board[m][k]="â—";
 				check();
-				if(board[m][k]=="¡¼")
+				if(board[m][k]=="â–¡")
 				bla=1-bla;
 				ais[num]=countw;
 				aix[num]=m;
@@ -670,11 +670,11 @@ void compu()
 		{
 			pointer[0]=m;
 			pointer[1]=k;
-			if(board[m][k]=="¡¼")
+			if(board[m][k]=="â–¡")
 			{
-				board[m][k]="¡´";
+				board[m][k]="â—";
 				check();
-				if(board[m][k]=="¡¼")
+				if(board[m][k]=="â–¡")
 				bla=1-bla;
 				ais[num]=countw;
 				aix[num]=m;
@@ -696,11 +696,11 @@ void compu()
 			{
 			pointer[0]=m;
 			pointer[1]=k;
-			if(board[m][k]=="¡¼")
+			if(board[m][k]=="â–¡")
 			{
-				board[m][k]="¡´";
+				board[m][k]="â—";
 				check();
-				if(board[m][k]=="¡¼")
+				if(board[m][k]=="â–¡")
 				bla=1-bla;
 				ais[num]=countw;
 				aix[num]=m;
@@ -723,11 +723,11 @@ void compu()
 			{
 			pointer[0]=m;
 			pointer[1]=k;
-			if(board[m][k]=="¡¼")
+			if(board[m][k]=="â–¡")
 			{
-				board[m][k]="¡´";
+				board[m][k]="â—";
 				check();
-				if(board[m][k]=="¡¼")
+				if(board[m][k]=="â–¡")
 				bla=1-bla;
 				ais[num]=countw;
 				aix[num]=m;
@@ -750,11 +750,11 @@ void compu()
 			{
 			pointer[0]=m;
 			pointer[1]=k;
-			if(board[m][k]=="¡¼")
+			if(board[m][k]=="â–¡")
 			{
-				board[m][k]="¡´";
+				board[m][k]="â—";
 				check();
-				if(board[m][k]=="¡¼")
+				if(board[m][k]=="â–¡")
 				bla=1-bla;
 				ais[num]=countw;
 				aix[num]=m;
@@ -850,7 +850,7 @@ void sorting()
 	pointer[1]=desi[2];
 	pla=1;
 	bla=1;
-	board[pointer[0]][pointer[1]]="¡´";
+	board[pointer[0]][pointer[1]]="â—";
 	}
 }
 

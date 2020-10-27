@@ -45,22 +45,22 @@ void askname()
 	do
 	{
 	if(players<2||players>4)
-	cout<<"½Ğ¿é¤J2~4­Óª±®a¼Æ¥Ø\n" ;
-	cout<<"ª±®a¼Æ¥Ø¡G";
+	cout<<"è«‹è¼¸å…¥2~4å€‹ç©å®¶æ•¸ç›®\n" ;
+	cout<<"ç©å®¶æ•¸ç›®ï¼š";
 	cin>>players;
 	}while(players<2||players>4);
-	cout<<"§Aªº¦WºÙ¬°¡G";
+	cout<<"ä½ çš„åç¨±ç‚ºï¼š";
 	cin>>name[0];
-	cout<<"ª±®a¤@¦WºÙ¬°¡G";
+	cout<<"ç©å®¶ä¸€åç¨±ç‚ºï¼š";
 	cin>>name[1];
 	if(players>2)
 	{
-		cout<<"ª±®a¤G¦WºÙ¬°¡G";
+		cout<<"ç©å®¶äºŒåç¨±ç‚ºï¼š";
 		cin>>name[2]; 
 	}
 	if(players>3)
 	{
-		cout<<"ª±®a¤T¦WºÙ¬°¡G";
+		cout<<"ç©å®¶ä¸‰åç¨±ç‚ºï¼š";
 		cin>>name[3]; 
 	}
 	order[0]=rand()%players;
@@ -82,17 +82,17 @@ void askname()
 			order[3]=rand()%players;
 		}while(order[3]==order[2]||order[3]==order[1]||order[3]==order[0]);
 	}
-	cout<<"¥XµP¶¶§Ç¡G"<<name[order[0]]<<"¡÷"<<name[order[1]];
+	cout<<"å‡ºç‰Œé †åºï¼š"<<name[order[0]]<<"â†’"<<name[order[1]];
 	if(players>2)
-	cout<<"¡÷"<<name[order[2]];
+	cout<<"â†’"<<name[order[2]];
 	if(players>3)
-	cout<<"¡÷"<<name[order[3]];
+	cout<<"â†’"<<name[order[3]];
 	cout<<endl;
 }
 
 void reset_99()
 {
-	cout<<"¹CÀ¸¶}©l¡A½ĞµoµP¡I\n";
+	cout<<"éŠæˆ²é–‹å§‹ï¼Œè«‹ç™¼ç‰Œï¼\n";
 	turn=table=minuscase=rota=0;
 	for(int d=-1;d++<3;)
 	lose[4]=0;
@@ -130,7 +130,7 @@ void reset_99()
 
 void showcard()
 {
-	cout<<name[0]<<"¡G  ";
+	cout<<name[0]<<"ï¼š  ";
 	for(int nc=-1;nc++<4;)
 	{
 	if(player[0][0][nc]!=-1)
@@ -152,20 +152,20 @@ void showcard()
 
 void showtable()
 {
-	cout<<"¥Ø«eÂi­±¼Æ­È¬°¡G"<<table<<endl<<endl;
+	cout<<"ç›®å‰æª¯é¢æ•¸å€¼ç‚ºï¼š"<<table<<endl<<endl;
 }
 
 void taketurn()
 {
 	int kind=0;
 	desi=-1;
-	cout<<"¥XµPªÌ¡G"<<name[order[turn]];
+	cout<<"å‡ºç‰Œè€…ï¼š"<<name[order[turn]];
 	if(order[turn]==0)
 	{
-		cout<<"\n½ü¨ì§A¥XµP¤F(²Ä´X±i)¡G";
+		cout<<"\nè¼ªåˆ°ä½ å‡ºç‰Œäº†(ç¬¬å¹¾å¼µ)ï¼š";
 		cin>>desi;
 		desi--;
-		cout<<"§A¥XªºµP¬°¡G  ";
+		cout<<"ä½ å‡ºçš„ç‰Œç‚ºï¼š  ";
 		if(player[0][0][desi]==1)
 		cout<<"s:";
 		if(player[0][0][desi]==2)
@@ -178,30 +178,30 @@ void taketurn()
 		cout<<player[0][1][desi]<<endl;
 		if(player[0][1][desi]==10||player[0][1][desi]==12)
 		{
-			cout<<"¥¿ÁÙ¬O­t¡H(¥¿½Ğ¿é¤J0,­t½Ğ¿é¤J1)¡G";
+			cout<<"æ­£é‚„æ˜¯è² ï¼Ÿ(æ­£è«‹è¼¸å…¥0,è² è«‹è¼¸å…¥1)ï¼š";
 			cin>>minuscase;
 		}
 		else if(player[0][1][desi]==1)
 		{
-			cout<<"§A­n«ü©w½Ö¡H(";
+			cout<<"ä½ è¦æŒ‡å®šèª°ï¼Ÿ(";
 			for(int na=0;na++<players-1;)
-			cout<<name[na]<<"½Ğ¿é¤J"<<na<<"  ";
-			cout<<"¦pªG­nÂk¹s¡A½Ğ¿é¤J9)¡G";
+			cout<<name[na]<<"è«‹è¼¸å…¥"<<na<<"  ";
+			cout<<"å¦‚æœè¦æ­¸é›¶ï¼Œè«‹è¼¸å…¥9)ï¼š";
 			cin>>minuscase;
 		}
 		else if(player[0][1][desi]==5)
 		{
-			cout<<"§A­n«ü©w½Ö¡H(";
+			cout<<"ä½ è¦æŒ‡å®šèª°ï¼Ÿ(";
 			for(int na=0;na++<players-1;)
-			cout<<name[na]<<"½Ğ¿é¤J"<<na<<"  ";
-			cout<<")¡G";
+			cout<<name[na]<<"è«‹è¼¸å…¥"<<na<<"  ";
+			cout<<")ï¼š";
 			cin>>minuscase;
 		}
 		
 	}
 	else
 	{
-		cout<<"¡G  ";
+		cout<<"ï¼š  ";
 		for(int u=-1;u++<4;)
 		{
 			if(player[order[turn]][1][u]+table<100&&(player[order[turn]][1][u]>player[order[turn]][1][desi]||desi==-1))
@@ -359,7 +359,7 @@ void getcard()
 	}
 	player[order[turn]][0][4]=player[order[turn]][1][4]=0;
 	if(order[turn]==0)
-	cout<<"©â±Æ½Ğ«öo¡G";
+	cout<<"æŠ½æ’è«‹æŒ‰oï¼š";
 	while(time>0)
 	{
 		if(order[turn]!=0)
@@ -379,7 +379,7 @@ void getcard()
 		time--;
 	}
 	if(time<=0)
-	cout<<"§A¤Ó±ß¤F¡A¿ù¹L¾÷·|\n";
+	cout<<"ä½ å¤ªæ™šäº†ï¼ŒéŒ¯éæ©Ÿæœƒ\n";
 	if(time>0)
 	{
 		do
@@ -415,7 +415,7 @@ void check_99()
 	int loses=0,cardf=0;
 	if (table>=100)
 	{
-		cout<<endl<<name[order[turn]]<<"¿é¤F\n";
+		cout<<endl<<name[order[turn]]<<"è¼¸äº†\n";
 		lose[order[turn]]=1;
 		table=0;
 	}
@@ -426,7 +426,7 @@ void check_99()
 	}
 	if(cardf==52)
 	{
-		cout<<"¶}±Ò¥t¤@°ÆµP\n";
+		cout<<"é–‹å•Ÿå¦ä¸€å‰¯ç‰Œ\n";
 		for(int ch=-1;ch++<51;)
 		{
 			cardused[ch]=0;
@@ -440,7 +440,7 @@ void check_99()
 		for(int lo=-1;lo++<players-1;)
 		{
 			if(lose[lo]!=1)
-			cout<<name[lo]<<"Ä¹¤F¡I";
+			cout<<name[lo]<<"è´äº†ï¼";
 		}
 	}
 	if(rota==0)
@@ -480,7 +480,7 @@ void mainpro_99()
 		check_99();
 		Sleep(300);
 	}
-	cout<<"¦pªG­nÂ÷¶}½Ğ¿é¤J1¡A¤£µM¦Û°Ê­«¨Ó";
+	cout<<"å¦‚æœè¦é›¢é–‹è«‹è¼¸å…¥1ï¼Œä¸ç„¶è‡ªå‹•é‡ä¾†";
 	cin>>exitse;
 	if(exitse=='1')
 	break;

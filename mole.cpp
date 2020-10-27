@@ -115,21 +115,21 @@ void defineRule()
 {
 	int startGame;
 	cout<<endl;
-	cout << "   HP : ¡¹¡¹¡¹¡¹¡¹" << endl;
-	cout << "   ¢C : 000" << endl<<endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  ¢ß  ¢i  ¢å  ¢i  ¢Ó  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  ¢Ï  ¢i  ¢á  ¢i  ¢Ò  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  ¢è  ¢i  ¢æ  ¢i  ¢Ñ  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
+	cout << "   HP : â˜…â˜…â˜…â˜…â˜…" << endl;
+	cout << "   ï¼„ : 000" << endl<<endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  ï¼±  â–ˆ  ï¼·  â–ˆ  ï¼¥  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  ï¼¡  â–ˆ  ï¼³  â–ˆ  ï¼¤  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  ï¼º  â–ˆ  ï¼¸  â–ˆ  ï¼£  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
 	cout << endl;
 	cout << "      Press 0 to start." << endl;
 	for(;;)
@@ -147,7 +147,7 @@ void hole(int n)
 {
 	int miss=1;
 	int r;
-	if(s[n]=="¢C")
+	if(s[n]=="ï¼„")
 	{
 		if(moneytime[n]++>=timetime)
 		{
@@ -162,16 +162,16 @@ void hole(int n)
 		r=rand()%9;
 		for(int i=-1;i++<8;)
 		{
-			if(r==i&&a[i]==0&&s[i]!="¢C"&&s[i]!="¢I")
+			if(r==i&&a[i]==0&&s[i]!="ï¼„"&&s[i]!="ï¼ ")
 			{
-				s[i]="¢C";
+				s[i]="ï¼„";
 				miss=0;
 			}
 		}}while(miss!=0);
 	}
-	else if(a[n]==1&&s[n]!="¢C"&&s[n]!="¢I")
+	else if(a[n]==1&&s[n]!="ï¼„"&&s[n]!="ï¼ ")
 	{
-		s[n]="¹«";
+		s[n]="é¼ ";
 		if(mousetime[n]++>=timetime)
 		{
 			a[n]=0;
@@ -179,9 +179,9 @@ void hole(int n)
 			lives--;
 		}
 	}
-	else if(c[n]>0&&s[n]!="¢C"&&s[n]!="¹«")
+	else if(c[n]>0&&s[n]!="ï¼„"&&s[n]!="é¼ ")
 	{
-		s[n]="¢I";
+		s[n]="ï¼ ";
 		if(mousetime[n]++>=timetime)
 		{
 			mousetime[n]=0;
@@ -204,24 +204,24 @@ void printGame()
 	cout<<endl;
 	cout << " HP : ";
 	for(int i = 1; i <= lives; i++)
-	cout << "¡¹";
+	cout << "â˜…";
 	cout << endl;
-	cout << " ¢C : ";
+	cout << " ï¼„ : ";
 	cout << money;
 	cout << endl<<endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  " << s[6] << "  ¢i  " << s[7] << "  ¢i  " << s[8] << "  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  " << s[3] << "  ¢i  " << s[4] << "  ¢i  " << s[5] << "  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i  " << s[0] << "  ¢i  " << s[1] << "  ¢i  " << s[2] << "  ¢i" << endl;
-	cout << "  ¢i      ¢i      ¢i      ¢i" << endl;
-	cout << "  ¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  " << s[6] << "  â–ˆ  " << s[7] << "  â–ˆ  " << s[8] << "  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  " << s[3] << "  â–ˆ  " << s[4] << "  â–ˆ  " << s[5] << "  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆ  " << s[0] << "  â–ˆ  " << s[1] << "  â–ˆ  " << s[2] << "  â–ˆ" << endl;
+	cout << "  â–ˆ      â–ˆ      â–ˆ      â–ˆ" << endl;
+	cout << "  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ" << endl;
 }
 
 void turnintomoney(int p)
@@ -232,7 +232,7 @@ void turnintomoney(int p)
 		b[p]=1;
 		mousetime[p]=0;
 	}
-	if(s[p]=="¢C")
+	if(s[p]=="ï¼„")
 	{
 		s[p]="  ";
 		money++;
