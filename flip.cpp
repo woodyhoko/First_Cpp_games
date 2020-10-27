@@ -287,37 +287,37 @@ void print1()
 	int n=1,m=1;
 	cout<<endl;
 	cout<<"  1           2           3           4           \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=5;m=1;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=5;m=1;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  5           6           7           8           \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=9;m=1;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=9;m=1;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  9           10          11          12          \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=13;m=1;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=13;m=1;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  13          14          15          16          \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m);cout<<"שרשר";shape(n++,m++);cout<<"שר\n";
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m);cout<<"||";shape(n++,m++);cout<<"|\n";
+	cout<<"  +--------++--------++--------++--------+\n";
 }
 
 void pick()
@@ -326,24 +326,24 @@ void pick()
 	times=0;
 	showtime=1;
 	srand(time(0));
-	cout<<"½׀¿ן¾Üֳר«׳(ֳר½׀¿י₪J1,´¶³q½׀¿י₪J2,ֲ²³ז½׀¿י₪J3)¡G";
+	cout<<"Please select difficulty(Hard(1), Normal(2), Easy(3)):";
 	cin>>reading;
 	timet=reading*5;
 	hard=reading;
-	cout<<"§A·Q­n¥־­‏₪K´Ú×ב¦ג¡H";
+	cout<<"Which 8 patterns do you want to pick?";
 	for(int k=0;k++<8;)
 	{
 		cin>>selected[k];
 		if(selected[k]>16||selected[k]<1)
 		{
-			cout<<"§O¶ֳ¿ן\n";
+			cout<<"Please don't enter nonsense!\n";
 			k--;
 		}
 		for(int n=0;n++<k-1;)
 		{
 			if(selected[n]==selected[k])
 			{
-				cout<<"½׀§O­«½ֶ¿ן¾Ü´Ú¦¡\n";
+				cout<<"Don't repeat the pattern, please re-enter:\n";
 				k--;
 			}
 		}
@@ -373,38 +373,38 @@ void realprinting()
 	int n=1,m=1;
 	cout<<endl;
 	cout<<"  1           2           3           4           \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=1;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=5;m=1;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=1;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=5;m=1;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  5           6           7           8           \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=5;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר";n=9;m=1;if(showtime==1){
-	cout<<"°O¾׀®ֹ¶¡³ׁ₪U¡G"<<timet<<"¬םֱִ";}cout<<endl;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=5;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|";n=9;m=1;if(showtime==1){
+	cout<<"Remaining Time"<<timet<<"second";}cout<<endl;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  9           10          11          12          \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=9;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=13;m=1;
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=9;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=13;m=1;
+	cout<<"  +--------++--------++--------++--------+\n\n";
 	cout<<"  13          14          15          16          \n";
-	cout<<"  שÝשששששששששßשÝשששששששששßשÝשששששששששßשÝשששששששששß\n";
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";n=13;
-	cout<<"  שר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m);cout<<"שרשר";shape(randed[n++],m++);cout<<"שר\n";
-	cout<<"  שדשששששששששושדשששששששששושדשששששששששושדשששששששששו\n";
+	cout<<"  +--------++--------++--------++--------+\n";
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";n=13;
+	cout<<"  |";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m);cout<<"||";shape(randed[n++],m++);cout<<"|\n";
+	cout<<"  +--------++--------++--------++--------+\n";
 }
 
 void guess()
@@ -412,12 +412,12 @@ void guess()
 	aaa=bbb=0;
 	fail=0;
 	rright=0;
-	cout<<"½׀¿י₪J§A°O±o¬O₪@¼ֻµP×÷½s¸¹¡G";
+	cout<<"Please enter the ID of the pair of identical cards:";
 	cin>>aaa>>bbb;
 	times++;
 	while(aaa==bbb||aaa>16||aaa<1||bbb>16||bbb<1||randed[aaa]!=17||randed[bbb]!=17)
 	{
-		cout<<"½׀§O¶ֳ¿י₪J½s¸¹¡A­«·s¿י₪J¡G";
+		cout<<"Don't enter nonsense!";
 		cin>>aaa>>bbb;
 		times++;
 	}
@@ -477,7 +477,7 @@ int mainpro_flip()
 		{
 			realprinting();
 			if(rright==1)
-			cout<<"®¥³ß¡I";
+			cout<<"Congrat!!";
 			Sleep(1000);
 			guess();
 			tem=hard;
@@ -486,7 +486,7 @@ int mainpro_flip()
 				while(tem-->0)
 				{
 					realprinting();
-					cout<<"¥¢±ֵׁo½׀­«·s¿ן¾Ü";
+					cout<<"Game over, you lose :(";
 					Sleep(1000);
 				}
 				randed[aaa]=randed[bbb]=17;
@@ -502,9 +502,9 @@ cout<<"|   | __ |       ||       ||   |___ |  | |  ||       ||   |___ |   |_||_ 
 cout<<"|   ||  ||       ||       ||    ___||  |_|  ||       ||    ___||    __  |\n";
 cout<<"|   |_| ||   _   || ||_|| ||   |___ |       | |     | |   |___ |   |  | |\n";
 cout<<"|_______||__| |__||_|   |_||_______||_______|  |___|  |_______||___|  |_|\n\n\n";
-cout<<"                        §A¦@¥־₪F"<<time2-time1<<"¬ם§¹¦¨\n\n"; 
-cout<<"                          §A¦@ֲ½₪F"<<times<<"¦¸\n\n";
-cout<<"                  ­«·s¶}©l¹Cְ¸½׀¥פ·N¿י₪J₪@­׃¦r₪¸\n                           ֲק¶}½׀¿י₪J0\n";
+cout<<"                        You spent"<<time2-time1<<"second\n\n"; 
+cout<<"                          TYou flipped"<<times<<"times\n\n";
+cout<<"                  press any key to continue\n                           press 0 to leave\n";
 cin>>tempe;
 		if(tempe=='0')
 		break;
