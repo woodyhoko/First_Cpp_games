@@ -1,5 +1,5 @@
 #include"99.cpp"
-#include"balck and white test.cpp"
+#include"black and white test.cpp"
 #include"snake1.22.cpp"
 #include"mole.cpp"
 #include"flip.cpp"
