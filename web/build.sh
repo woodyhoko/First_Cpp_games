@@ -43,6 +43,8 @@ emcc "$SRC" \
   -o "$OUT/game.js"
 
 cp "$HERE/index.html" "$OUT/index.html"
+cp "$HERE/readme.html" "$OUT/readme.html"
+cp "$ROOT/README.md"   "$OUT/README.md"   # served so readme.html can render it
 
 echo "Done. Serve it locally with:"
 echo "    python -m http.server --directory \"$OUT\" 8000"
