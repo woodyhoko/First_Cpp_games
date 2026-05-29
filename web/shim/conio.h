@@ -16,8 +16,15 @@
 
 #include <emscripten.h>
 
-/* Returns non-zero if a key is waiting in the browser input queue. */
+/* Returns non-zero if a key is waiting in the browser input queue.
+ *
+ * Crucially this yields to the browser first (emscripten_sleep, needs
+ * -sASYNCIFY). The games poll _kbhit() in tight busy-wait loops with no
+ * Sleep of their own (e.g. the main menu). Without a yield, such a loop
+ * never returns control to the event loop, so keystrokes are never
+ * delivered, pending stdout is never flushed, and the page freezes. */
 static inline int _kbhit(void) {
+    emscripten_sleep(0); /* cooperative yield: deliver keys + repaint */
     return EM_ASM_INT({ return (Module.kbhit ? Module.kbhit() : 0); });
 }
 
