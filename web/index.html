@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>First C++ Games — play in your browser</title>
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/css/xterm.css" />
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #14161a;
+    color: #d6d8dc;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header { text-align: center; margin: 22px 16px 6px; }
+  header h1 { margin: 0 0 6px; font-size: 1.4rem; }
+  header p  { margin: 0; opacity: .75; font-size: .9rem; }
+  #terminal {
+    margin: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #1e1e1e;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  #status { font-size: .85rem; opacity: .7; min-height: 1.2em; margin-bottom: 18px; }
+  kbd {
+    background:#2b2f36; border:1px solid #3a3f47; border-bottom-width:2px;
+    border-radius:4px; padding:1px 6px; font-size:.8em;
+  }
+  a { color: #8ab4ff; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>First C++ Games</h1>
+    <p>Menu: <kbd>1</kbd> Snake · <kbd>2</kbd> Whac-A-Mole · <kbd>3</kbd> Reversi ·
+       <kbd>4</kbd> Card&nbsp;99 · <kbd>5</kbd> Memory · <kbd>0</kbd> quit.
+       In-game movement is usually <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>.</p>
+  </header>
+
+  <div id="terminal"></div>
+  <div id="status">Loading WebAssembly…</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.js"></script>
+  <script>
+    const statusEl = document.getElementById("status");
+
+    const term = new Terminal({
+      cols: 100,
+      rows: 40,
+      fontFamily: '"Cascadia Mono", "DejaVu Sans Mono", Consolas, monospace',
+      fontSize: 14,
+      cursorBlink: true,
+      convertEol: false,
+      theme: { background: "#1e1e1e", foreground: "#d6d8dc" },
+    });
+    term.open(document.getElementById("terminal"));
+    term.focus();
+    document.getElementById("terminal").addEventListener("click", () => term.focus());
+
+    // --- keyboard: queue keystrokes for the C++ side (_kbhit / _getch) ---
+    const inputQueue = [];
+    term.onData((data) => {
+      for (const ch of data) inputQueue.push(ch.codePointAt(0));
+    });
+
+    // --- stdout: batch raw bytes and let xterm decode UTF-8 itself ---
+    let outBuf = [], flushScheduled = false;
+    function flushOut() {
+      flushScheduled = false;
+      if (outBuf.length) { term.write(new Uint8Array(outBuf)); outBuf = []; }
+    }
+    function onStdout(byte) {
+      if (byte === null || byte === 0) return;
+      outBuf.push(byte);
+      if (!flushScheduled) { flushScheduled = true; queueMicrotask(flushOut); }
+    }
+
+    // --- Emscripten module configuration ---
+    var Module = {
+      // Called from the conio.h shim via EM_ASM.
+      kbhit: () => (inputQueue.length > 0 ? 1 : 0),
+      getch: () => (inputQueue.length > 0 ? inputQueue.shift() : -1),
+      preRun: [function () {
+        // Route stdout & stderr through the terminal, character by character.
+        Module.FS.init(null, onStdout, onStdout);
+      }],
+      // We handle output ourselves; silence the default line-buffered print.
+      print: () => {},
+      printErr: (t) => console.error(t),
+      onRuntimeInitialized: () => {
+        statusEl.textContent = "Ready — click the terminal and press a number key.";
+        term.focus();
+      },
+      onAbort: (what) => { statusEl.textContent = "Aborted: " + what; },
+      onExit: () => {
+        statusEl.textContent = "Game over — reload the page to play again.";
+        term.write("\r\n\x1b[90m[program exited — reload to restart]\x1b[0m\r\n");
+      },
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+</html>
