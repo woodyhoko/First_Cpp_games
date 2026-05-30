@@ -189,6 +189,87 @@ Pass `"Chinese version"` as an argument to build that port instead.
 
 ---
 
+## How the web port works (technical)
+
+These are synchronous, blocking, Windows-console programs. The browser is the
+opposite environment: single-threaded, event-driven, no console, no Win32. Four
+things bridge that gap.
+
+### 1 · Emscripten compiles C++ to WebAssembly
+
+[Emscripten](https://emscripten.org) is an LLVM/Clang-based toolchain. `emcc`
+compiles the C++ to a **`.wasm`** module plus a **`.js`** loader that
+instantiates the module, wires up a virtual stdin/stdout/filesystem, and exposes
+helpers. Because `main.cpp` `#include`s every game's `.cpp`, the whole collection
+is **one translation unit** — a single `emcc main.cpp` call builds everything.
+
+### 2 · Shim headers replace the Win32 API (no source edits)
+
+The games `#include <conio.h>` and `#include <windows.h>`, which don't exist
+off-Windows. Instead of editing the games, [`web/shim/`](web/shim) contains files
+named `conio.h` and `windows.h`, and the build adds that folder to the include
+path (`-I web/shim`). The compiler finds *our* headers first, so each Win32 call
+is redirected to a browser-friendly equivalent:
+
+| Original call | Shim implementation |
+| --- | --- |
+| `Sleep(ms)` | `emscripten_sleep(ms)` |
+| `system("cls")` | prints the ANSI clear sequence `\033[2J\033[3J\033[H` |
+| `SetConsoleTextAttribute(h, n)` | converts the Win32 colour nibble to an ANSI SGR code (`\033[..m`) |
+| `_getch()` / `_kbhit()` | read a JS-side keystroke queue via `EM_ASM` |
+
+A static initialiser in the windows.h shim also calls `setvbuf(stdout, …,
+_IONBF, …)` so output is unbuffered and reaches the screen each frame.
+
+### 3 · Asyncify makes blocking code cooperate with the event loop
+
+The games **block** (`_getch` waits for a key) and **busy-loop** (the menu spins
+on `_kbhit`). In a browser, blocking the single thread freezes the tab. The build
+flag **`-sASYNCIFY`** solves this: Emscripten instruments the compiled code so it
+can **suspend the entire C++ call stack** at certain points, return control to the
+browser, and **resume later** exactly where it left off.
+
+The suspension point is `emscripten_sleep()`. So the shims call it:
+
+- `Sleep(ms)` → `emscripten_sleep(ms)` — frame timing that yields to the browser.
+- `_getch()` → loops `emscripten_sleep(8)` until a key is queued, then returns it.
+- `_kbhit()` → calls `emscripten_sleep(0)` so even a tight `while(!_kbhit())`
+  poll hands control back each iteration. (Omitting this was an early bug: the
+  menu froze on a blank screen because the loop never yielded, so keystrokes were
+  never delivered and buffered output never flushed.)
+
+### 4 · The browser terminal: xterm.js
+
+[`web/index.html`](web/index.html) hosts an [xterm.js](https://xtermjs.org)
+terminal that plays the role of the console:
+
+- **Output.** `FS.init` routes the program's stdout through a callback. Bytes are
+  batched and handed to `term.write(new Uint8Array(...))`, which lets xterm
+  decode UTF-8 itself — so the Reversi board's `●` `○` `□` render correctly — and
+  interpret the ANSI escapes the shims emit for clearing and colour.
+- **Input.** `term.onData` pushes each typed character code into a queue. The
+  `conio.h` shim's `EM_ASM` calls read from that queue, turning asynchronous
+  browser keystrokes into the synchronous `_getch`/`_kbhit` the games expect.
+- **Size.** The terminal is fixed at **80×40** to match the 80-column console the
+  ASCII art was designed for.
+
+### Build flags, briefly
+
+```
+emcc main.cpp -I web/shim -std=c++14 -O2 \
+  -sASYNCIFY                 # suspend/resume so blocking code can yield
+  -sASYNCIFY_STACK_SIZE=131072
+  -sALLOW_MEMORY_GROWTH=1    # grow the heap on demand
+  -sEXPORTED_RUNTIME_METHODS=FS,callMain
+  -sEXIT_RUNTIME=0 -sINVOKE_RUN=1
+  -o web/public/game.js
+```
+
+CI ([`.github/workflows/web.yml`](.github/workflows/web.yml)) installs the
+Emscripten SDK, runs this build, and deploys `web/public/` to GitHub Pages.
+
+---
+
 ## License
 
 See [LICENSE](LICENSE).

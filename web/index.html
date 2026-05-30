@@ -61,7 +61,11 @@
     const statusEl = document.getElementById("status");
 
     const term = new Terminal({
-      cols: 100,
+      // Sized for the original 80-column Windows console these games target.
+      // Snake's board is 43 cols (width=41 + 2 borders); its splash art is the
+      // widest output at 65 cols, so 80 fits everything and keeps the ASCII-art
+      // centring as designed.
+      cols: 80,
       rows: 40,
       fontFamily: '"Cascadia Mono", "DejaVu Sans Mono", Consolas, monospace',
       fontSize: 14,
