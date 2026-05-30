@@ -30,7 +30,7 @@ fi
 mkdir -p "$OUT"
 
 echo "Building \"$VERSION\" -> $OUT/game.js"
-emcc "$SRC" \
+emcc "$SRC" "$HERE/shim/web_stdin.cpp" \
   -I "$HERE/shim" \
   -std=c++14 \
   -O2 \
@@ -40,6 +40,7 @@ emcc "$SRC" \
   -sEXPORTED_RUNTIME_METHODS=FS,callMain \
   -sEXIT_RUNTIME=0 \
   -sINVOKE_RUN=1 \
+  -Wl,--wrap=read \
   -o "$OUT/game.js"
 
 cp "$HERE/index.html" "$OUT/index.html"

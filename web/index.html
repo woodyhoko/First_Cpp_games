@@ -27,6 +27,8 @@
     border-radius: 8px;
     background: #1e1e1e;
     box-shadow: 0 8px 30px rgba(0,0,0,.45);
+    max-width: 100%;
+    overflow-x: auto;        /* never overflow the viewport horizontally */
   }
   #status { font-size: .85rem; opacity: .7; min-height: 1.2em; margin-bottom: 18px; }
   header .links { margin-top: 10px; font-size: .9rem; }
@@ -74,6 +76,17 @@
       theme: { background: "#1e1e1e", foreground: "#d6d8dc" },
     });
     term.open(document.getElementById("terminal"));
+
+    // Scale the font so the fixed 80-column board fits the screen width,
+    // instead of overflowing with too many characters per row on small screens.
+    function fitFont() {
+      const avail = Math.min(window.innerWidth - 52, 760); // minus margins/padding
+      const fs = Math.max(9, Math.min(15, Math.floor(avail / (term.cols * 0.62))));
+      if (term.options.fontSize !== fs) term.options.fontSize = fs;
+    }
+    fitFont();
+    window.addEventListener("resize", fitFont);
+
     term.focus();
     document.getElementById("terminal").addEventListener("click", () => term.focus());
 
@@ -100,6 +113,9 @@
       // Called from the conio.h shim via EM_ASM.
       kbhit: () => (inputQueue.length > 0 ? 1 : 0),
       getch: () => (inputQueue.length > 0 ? inputQueue.shift() : -1),
+      // Called from web_stdin.cpp to echo line-input (cin/scanf) keystrokes,
+      // since xterm runs in raw mode and doesn't echo on its own.
+      echo: (code) => term.write(code === 10 ? "\r\n" : String.fromCharCode(code)),
       preRun: [function () {
         // Route stdout & stderr through the terminal, character by character.
         Module.FS.init(null, onStdout, onStdout);
